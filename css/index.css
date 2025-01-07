@@ -76,8 +76,7 @@ a {
 
 .memory-game {
   width: 100%;
-  justify-content: center;
-  
+  justify-content: center;  
 }
 
 .flex {
@@ -85,4 +84,5 @@ a {
   border-radius: 15px;
   width: 500px;
   padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
