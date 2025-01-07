@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de Tarefas</title>
+    <link rel="stylesheet" href="../css/toDoList.css" />
+  </head>
+  <body>
+    <header>
+      <div class="top-content">
+        <a href="index.html"><h1>Oficina 1</h1></a>
+        <div>
+          <button class="btn" id="color-generator">
+            Alterar fundo
+          </button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="main">
+        <div class="container">
+          <h1>Lista de Tarefas</h1>
+          <div class="input-area">
+            <input
+              type="text"
+              id="new-task"
+              placeholder="Digite uma nova tarefa"
+            />
+            <button id="add-task">Adicionar</button>
+          </div>
+          <ul id="list-task"></ul>
+        </div>
+        <div class="btn-exit">
+          <a href="index.html"><button>Sair</button></a>
+        </div>
+      </div>
+    </main>
+    <script src="../JavaScript/toDoList.js"></script>
+  </body>
+</html>

@@ -1,0 +1,162 @@
+/* Estilizações gerais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Times New Roman", Times, serif;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  background-color: #f4f4f9;
+}
+
+header {
+  width: 100%;
+  margin-bottom: 60px;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Estilização do topo da pagina */
+.top-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #fff;
+}
+.top-content h1 {
+  font-size: 40px;
+  font-weight: 700;
+  color: #333333;
+}
+
+.btn {
+  padding: 15px;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 14px;
+  border: none;
+  color: #fff;
+  background-color: #3800c5;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #4c00ff;
+  transform: scale(1.03);
+}
+
+/* Estilização do conteudo principal */
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.container {
+  text-align: center;
+  min-width: 500px;
+  max-width: 90%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.input-area {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px 15px;
+  font-size: 16px;
+  color: white;
+  background-color: #3800c5;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #4c00ff;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+  
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  
+}
+li button {
+    justify-content: end;
+}
+
+li.completed {
+  text-decoration: line-through;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
+
+button.complete {
+  background-color: #3800c5;
+}
+
+button.complete:hover {
+  background-color: #4c00ff;
+}
+
+button.delete {
+  background-color: #dc3545;
+}
+
+button.delete:hover {
+  background-color: #bd2130;
+}
+
+.btn-exit button {
+  margin-top: 30px;
+  font-size: 25px;
+  transition: 0.3s;
+}
+.btn-exit button:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
