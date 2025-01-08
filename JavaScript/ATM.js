@@ -2,11 +2,11 @@ const inputSaque = document.getElementById('valor-saque');
 const btnSacar = document.getElementById('btn-sacar');
 const resultado = document.getElementById('resultado');
 
-const cedulas = [100, 50, 20, 10, 5, 2, 1];
+const cedulas = [200, 100, 50, 20, 10];
 
 function calcularCedulas(valor) {
   const distribuicao = {};
-  
+
   cedulas.forEach(cedula => {
     if (valor >= cedula) {
       distribuicao[cedula] = Math.floor(valor / cedula);
@@ -14,7 +14,7 @@ function calcularCedulas(valor) {
     }
   });
 
-  return distribuicao;
+  return valor === 0 ? distribuicao : null; // Retorna null se sobrar valor que não pode ser sacado
 }
 
 function realizarSaque() {
@@ -26,7 +26,12 @@ function realizarSaque() {
   }
 
   const distribuicao = calcularCedulas(valor);
-  
+
+  if (!distribuicao) {
+    resultado.innerHTML = '<p style="color: red;">O valor informado não pode ser sacado com as cédulas disponíveis (10, 20, 50, 100, 200).</p>';
+    return;
+  }
+
   resultado.innerHTML = '<h2>Resultado:</h2>';
   for (const cedula in distribuicao) {
     if (distribuicao[cedula] > 0) {
@@ -43,15 +48,14 @@ inputSaque.addEventListener('keypress', (e) => {
   }
 });
 
-
-// Gerar cor de fundo aleatoria
+// Gerar cor de fundo aleatória
 function randomColorGenerator() {
-    return '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0');
-  }
-  
-  const changeColor = document.getElementById('color-generator');
+  return '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0');
+}
 
-  changeColor.addEventListener('click', () => {
-    const newColor = randomColorGenerator();
-    document.body.style.backgroundColor = newColor;
-  });
+const changeColor = document.getElementById('color-generator');
+
+changeColor.addEventListener('click', () => {
+  const newColor = randomColorGenerator();
+  document.body.style.backgroundColor = newColor;
+});

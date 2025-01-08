@@ -2,10 +2,8 @@ const inputTask = document.getElementById('new-task');
 const btnAdd = document.getElementById('add-task');
 const listTasks = document.getElementById('list-task');
 
-// Array para armazenar as tasks
 let tasks = [];
 
-// Função para adicionar uma nova tarefa
 function addTask() {
   const textTask = inputTask.value.trim();
 
@@ -25,7 +23,6 @@ function addTask() {
   inputTask.value = '';
 }
 
-// Função para marcar uma tarefa como concluída
 function toggleTaskCompletion(id) {
   tasks = tasks.map(task =>
     task.id === id ? { ...task, completed: !task.completed } : task
@@ -33,13 +30,11 @@ function toggleTaskCompletion(id) {
   updateTaskList();
 }
 
-// Função para excluir uma tarefa
 function deleteTask(id) {
   tasks = tasks.filter(task => task.id !== id);
   updateTaskList();
 }
 
-// Função para atualizar a lista de tarefas na DOM
 function updateTaskList() {
   listTasks.innerHTML = '';
 
@@ -48,13 +43,11 @@ function updateTaskList() {
     li.className = task.completed ? 'completed' : '';
     li.textContent = task.text;
 
-    // Botão para marcar como concluído
     const btnComplete = document.createElement('button');
     btnComplete.textContent = 'Concluir';
     btnComplete.className = 'complete';
     btnComplete.addEventListener('click', () => toggleTaskCompletion(task.id));
 
-    // Botão para excluir a tarefa
     const btnDelete = document.createElement('button');
     btnDelete.textContent = 'Excluir';
     btnDelete.className = 'delete';
@@ -66,10 +59,8 @@ function updateTaskList() {
   });
 }
 
-// Adiciona evento ao botão de adicionar tarefa
 btnAdd.addEventListener('click', addTask);
 
-// Permite adicionar a tarefa ao pressionar "Enter"
 inputTask.addEventListener('keypress', (e) => {
   if (e.key === 'Enter') {
     addTask();
